@@ -3,72 +3,102 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Terra Casa Contracting</title>
-	<link rel="stylesheet" type="text/css" href="src/styles/style.css">
+	<link rel="stylesheet" type="text/css" href="public/styles/style.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins:300,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:300,500,700" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
 	<header>
-		<div class="container">
-			<nav>
-				<img src="assets/TerraCasa.jpg" alt="Terra Casa Contracting Logo">
+		<nav>
+			<div class="container">
+				<img src="assets/tccLogo.png" alt="Terra Casa Contracting Logo">
 				<div class="contact">
 					<button class="fQuote">Free Quote</button>
-					<a href="#contact">Contact Us</a>
+					<p>(647) 717-8485 <br>or <br><a href="#contact"><strong>Email Us</strong></a></p>
 				</div>
-				<ul class="hamburger">
-					<li>Aluminum Siding</li>
-					<li>Window Work</li>
-					<li>Eavestroughs</li>
-					<li>Fascia</li>
-					<li>Soffit</li>
-					<li>Vinyl Siding</li>
-					<li>Siding Repairs</li>
-					<li>Gutters</li>
-					<li>Drains</li>
-				</ul>
-			</nav>
-			<div class="hero">
+				<button class="hamburger">
+					<div></div>
+					<div></div>
+					<div></div>
+				</button>
+				<div id="hamItems" class="hidden">
+					<ul id="hamburgerItems">
+						<li><a href="#about">About</a></li>
+						<li><a href="#repairs">Repairs</a></li>
+						<li><a href="#siding">Siding</a></li>
+						<li><a href="#eaves">Eavestroughs</a></li>
+						<li><a href="#fascia">Fascia &amp; Soffit</a></li>
+						<li><a href="#area">Service Area</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="hero">
+			<div class="container">
 				<h1>Terra Casa Contracting</h1>
 			</div>
-		</div><!-- /.container -->
+		</div>
 	</header>
 	<main>
-		<div class="quoteO">
-			<div class="quote">
+		<section>
+			<div class="quoteO hidden" id="quoteO"></div>
+			<div class="quote hidden">
 				<h2>Free Quote</h2>
+				<p class="close" id="close">&Cross;</p>
 				<form action="">
-					<input type="text" name="name" placeholder="Name" required>
-					<input type="email" name="email" placeholder="Email" required>
-					<input type="text" name="number" placeholder="Phone Number" required>
-					<input type="text" name="city" placeholder="City or Town">
+					<input class="qI" type="text" name="name" placeholder="Name" required>
+					<input class="qI" type="email" name="email" placeholder="Email" required>
+					<input class="qI" type="text" name="number" placeholder="Phone Number" required>
+					<input class="qI" type="text" name="city" placeholder="City or Town">
+					<p><strong>What services do you need?</strong></p>
 					<div class="formServices">
-						<label for="service">What services do you need?</label>
-						<input type="checkbox" name="service">Siding<br>
-						<input type="checkbox" name="service">Window Work<br>
-						<input type="checkbox" name="service">Eavestroughs<br>
-						<input type="checkbox" name="service">Fascia<br>
-						<input type="checkbox" name="service">Soffit<br>
-						<input type="checkbox" name="service">Siding<br>
-						<input type="checkbox" name="service">Gutters<br>
-						<input type="checkbox" name="service">Drains<br>
-						<input type="text" name="other" placeholder="Other">
+						<div class="input">
+							<input type="checkbox" id="siding" name="service">
+							<label for='siding'>Siding</label>
+						</div>
+						<div class="input">
+							<input type="checkbox" id="window" name="service">
+							<label for="window">Window</label>
+						</div>
+						<div class="input">
+							<input type="checkbox" name="service" id="eaves">
+							<label for="eaves">Eavestroughs</label>
+						</div>
+						<div class="input">
+							<input type="checkbox" name="service" id="fascia">
+							<label for="fascia">Fascia</label>
+						</div>
+						<div class="input">
+							<input type="checkbox" name="service" id="soffit">
+							<label for="soffit">Soffit</label>
+						</div>
+						<div class="input">
+							<input type="checkbox" name="service" id="gutter">
+							<label for="gutter">Gutters</label>
+						</div>
+						<div class="input">
+							<input type="checkbox" name="service" id="drains">
+							<label for="drains">Drains</label>
+						</div>
+						<input type="text" name="other" placeholder="Other" id="other">
 					</div>
 					<textarea name="comments" id="" cols="30" rows="10" placeholder="Comments or Questions?"></textarea>
+					<button type="submit">Send Email</button>
 				</form>
 			</div>
-		</div>
+		</section>
 		<div class="container">
-			<section class="about">
-				<h2>About Us</h2>
-				<p>Aluminum siding not only enhances the look of your home but it also protects it against the elements, helps to insulate the interior and adds that much desired curb appeal if you should decide to sell. Your Toronto home is probably your biggest investment and adding aluminum siding is a great way to protect that investment for many years to come. You want to choose a reputable siding contractor in Toronto that will give your home the care that it deserves.</p>
-
+			<section class="about" id="about">
+				<h2>About</h2>
+				
 				<p>We are a company with long-standing roots in the community, providing quality installations of quality products at a reasonable price. Our warranty on our labor attests to our belief in our workmanship. We have a long term relationship with our major suppliers which assures the customer of prompt attention to any issues which may arise with the products we supply. We install aluminum siding, eves, fascia and do siding repairs in the GTA area; Toronto Ontario Canada.</p>
+
+				<p>Aluminum siding not only enhances the look of your home but it also protects it against the elements, helps to insulate the interior and adds that much desired curb appeal if you should decide to sell. Your Toronto home is probably your biggest investment and adding aluminum siding is a great way to protect that investment for many years to come. You want to choose a reputable siding contractor in Toronto that will give your home the care that it deserves.</p>
 
 				<p>Need aluminum siding or window work done at a cost you can live with? We can help, our fair prices is one of the reasons why friends refer to us every day. We provide:</p>
 
-				<ul>
+				<ul class="clearfix">
 					<li>Aluminum Siding</li>
 					<li>Window Work</li>
 					<li>Eavestroughs</li>
@@ -79,12 +109,12 @@
 					<li>Gutters</li>
 					<li>Drains</li>
 				</ul>
-
-				<button class="fQuote">
-					Get a free quote today!
-				</button>
+				<div class="freeQ">
+					<p><strong>Get a Free Quote today!</strong></p>
+					<button class="fQuote">Free Quote</button>
+				</div>
 			</section>
-			<section class="repairs">
+			<section class="repairs" id="repairs">
 				<h2>Repairs</h2>
 				<p>To repair vinyl siding, you will need to remove the entire length of that piece. Gently unsnap and lift up on the piece above the one you are removing and take out the nails. Bring that piece to the home improvement store to find a color match to the one you are replacing. Put it back in place on the house, and nail back in. Sounds hard, yes it is so pick up the phone and call us - WE CAN HELP!</p>
 				 
@@ -92,18 +122,20 @@
 
 				<p>Need aluminum siding or window work done at a cost you can live with? We can help, our fair prices is one of the reasons why friends refer to us every day.</p>
 
-				<button class="fQuote">
-					Get a free quote today!
-				</button>
+				<div class="freeQ">
+					<p><strong>Get a Free Quote today!</strong></p>
+					<button class="fQuote">Free Quote</button>
+				</div>
 			</section>
-			<section class="siding">
+			<section class="siding" id="siding">
 				<h2>Siding</h2>
 				<p> ... </p>
-				<button class="fQuote">
-					Get a free quote today!
-				</button>
+				<div class="freeQ">
+					<p><strong>Get a Free Quote today!</strong></p>
+					<button class="fQuote">Free Quote</button>
+				</div>
 			</section>
-			<section class="eaves">
+			<section class="eaves" id="eaves">
 				<h2>Eavestroughs</h2>
 				<p>Water that is not guided away from the house will fall onto the sides. Rainwater can cause rotting to exterior walls. Runoff can peel away house paint and reduce the protection of the siding. Without proper drainage, interior rotting can take place as well. Water that pools up around the foundation of the house can soak through to the basement or crawl space. The moisture saturates the air around the house and eventually turns into condensation on cold surfaces. Too much moisture around windows or interior walls will cause wood rot and mildew. This can be costly to fix and can easily be prevented by installing a gutters and downspouts.</p>
 
@@ -111,18 +143,21 @@
 
 				<p>Installing a gutter system is an important step in owning a home. You can protect the appearance and durability of your home by preventing any unnecessary destruction.</p>
 
-				<button class="fQuote">
-					Get a free quote today!
-				</button>
+				<div class="freeQ">
+					<p><strong>Get a Free Quote today!</strong></p>
+					<button class="fQuote">Free Quote</button>
+				</div>
 			</section>
-			<section class="fascia">
+			<section class="fascia" id="fascia">
 				<h2>Fascia</h2>
 				<p>...</p>
-				<button class="fQuote">
-					Get a free quote today!
-				</button>
+				<div class="freeQ">
+					<p><strong>Get a Free Quote today!</strong></p>
+					<button class="fQuote">Free Quote</button>
+				</div>
 			</section>
-			<section class="area">
+			<section class="area" id="area">
+				<h2>Service Area</h2>
 				<div class="areaL">
 					<ul>
 						<li>GTA</li>
@@ -152,8 +187,9 @@
 		<div class="container">
 			<div class="fL">
 				<h4>Terra Casa Contracting</h4>
-				<p class="fP">(647) 717-8485</p>
-				<p class="fP">(647) 962-2065</p>
+				<p>(647) 717-8485</p>
+				<p>(647) 962-2065</p>
+				<p>terracasacontracting@hotmail.com</p>
 			</div>
 			<div class="fR">
 				<h4>Email Us</h4>
@@ -162,11 +198,12 @@
 					<input type="email" name="email" placeholder="Email" required>
 					<input type="text" name="number" placeholder="Phone Number" required>
 					<textarea name="comments" id="" cols="30" rows="10" placeholder="Comments or Questions?"></textarea>
+					<button type="submit">Send Email</button>
 				</form>
 			</div>
 		</div><!-- /.container -->
 	</footer>
-	<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="public/scripts/app.js"></script>
 </body>
 </html>
