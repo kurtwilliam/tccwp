@@ -26,15 +26,18 @@ $('.quoteO').on('click', function(){
 // On click of hamburger, show list items
 $( ".hamburger" ).click(function() {
 	if ($( "#hamItems" ).hasClass('hidden')) {
-		$('#hamItems').removeClass('hidden')
+		$('#hamItems').removeClass('hidden');
+		$('#hamburgerItems').removeClass('hidden');
 	} else {
 		$('#hamItems').addClass('hidden');
+		$('#hamburgerItems').addClass('hidden');
 	}
 })
 
 // On click of hamburger button or outside of hamburger close list
 $( "#hamItems" ).click(function() {
 	$( "#hamItems" ).addClass('hidden');
+	$('#hamburgerItems').addClass('hidden')
 });
 
 }) 

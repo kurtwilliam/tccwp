@@ -26,7 +26,7 @@ h1,h2,h3,h4,h5 {
 }
 
 h2{
-	margin: 30px 0;
+	margin: 0 0 30px 0;
 	font-size: 2.2rem;
 }
 
@@ -44,9 +44,16 @@ p {
 	line-height: 1.2rem;
 }
 
+section {
+	padding:30px 0;
+}
+
 header{
 	height: 100vh;
 	width:100%;
+	@media (max-width: 500px){
+		height: auto;
+	}
 }
 
 nav{
@@ -56,15 +63,29 @@ nav{
 	left:0;
 	right:0;
 	background: white;
+	z-index: 100;
+	@media (max-width:500px){
+		position: relative;
+		top:0;
+		left:0;
+		right:0;
+	}
 	.container	{
 		display: flex;
 		justify-content: space-between;
-		flex-direction: row;
 		align-items: center;
+		@media (max-width: 500px){
+			padding: 0 20px;
+			flex-direction: column;
+		}
 	}
 	img{
 		width:120px;
 		height:120px;
+		@media (max-width: 500px){
+			width: 100%;
+			height:auto;
+		}
 	}
 	a{
 		text-decoration: none;
@@ -80,6 +101,13 @@ nav{
 	display:flex;
 	flex-direction: column;
 	text-align: center;
+	@media (max-width: 500px){
+		position: relative;
+		transform: translate(0,0);
+		left:0;
+		top:0;
+		padding: 10px 0;
+	}
 	strong {
 		font-size: 1.2rem;
 	}
@@ -109,6 +137,10 @@ nav{
 	color:white;
 }
 
+.hamburg {
+	position: relative;
+}
+
 .hamburger {
 	width:30px;
 	display:flex;
@@ -118,6 +150,7 @@ nav{
 	padding:0;
 	border:none;
 	background: transparent;
+	position:relative;
 	div {
 		border:solid 1px black;
 		width:30px;
@@ -127,18 +160,21 @@ nav{
 }
 
 #hamItems {
-	position: absolute;
+	position: fixed;
 	top:0;
 	left:0;
 	right:0;
 	height:100vh;
+	width:100vh;
+	// z-index:10000;
 }
 
 #hamburgerItems {
 	list-style: none;
 	position: absolute;
-	right:5px;
-	top:85px;
+	top:21px;
+	// right:5px;
+	// top:85px;
 	li {
 		padding:3px;
 		border:1px solid rgb(230,230,230);
@@ -168,7 +204,9 @@ nav{
 		font-size: 3rem;
 		color: white;
 		text-shadow:0 5px 10px rgba(0,0,0,.3)
-		// margin-right: 10%;
+	}
+	@media (max-width: 500px){
+		display: none;
 	}
 }
 
@@ -184,6 +222,7 @@ nav{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 1000;
 }
 
 .quote{
@@ -199,6 +238,7 @@ nav{
 	left:50%;
 	transform: translate(-50%,-50%);
 	overflow-y:scroll;
+	z-index: 1000;
 	@media (max-width:680px){
 		width:98%;
 		max-height:98vh
@@ -273,19 +313,77 @@ nav{
 	}
 }
 
-.about {
-	ul {
-		display: flex;
-		justify-content: center;
-		flex-wrap:wrap;
-		margin: 10px 0;
+.services {
+	// margin: 10px 0;
+	background: rgb(240,240,240);
+	.servicesGrid{
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 	}
-	ul li {
-		padding: 5px 10px;
-		border:1px solid $aBlue;
-		margin: 5px;
-		list-style: none;
-		margin: 5px;
+	.service{
+		position: relative;
+		width:calc(33.33% - 10px);
+		margin:5px;
+		min-height: 250px;
+		height:auto;
+		text-align: center;
+		z-index: 0;
+		display:flex;
+		justify-content: center;
+		box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+		@media (max-width: 770px){
+			width:calc(50% - 10px);
+		}
+		@media (max-width: 570px){
+			width:calc(100% - 10px);
+		}
+		h3{
+			position: absolute;
+			bottom:20px;
+			text-align: center;
+			color:white;
+			text-shadow: 0 5px 10px rgba(0,0,0,0.3);
+		}
+	}
+	.service1{
+		background: url('../../assets/alumSidingN.jpg');
+		background-size: cover;
+	}
+	.service2{
+		background: url('../../assets/window.jpg');
+		background-size: cover;
+	}
+	.service3{
+		background: url('../../assets/eavesN.jpg') 80%;
+		background-size: cover;
+	}
+	.service4{
+		background: url('../../assets/fasciaN.jpg');
+		background-size: cover;
+	}
+	.service5{
+		background: url('../../assets/soffitN.jpg') 80%;
+		background-size: cover;
+	}
+	.service6{
+		background: url('../../assets/vinylN.jpg') 60%;
+		background-size: cover;
+	}
+	.service7{
+		background: url('../../assets/repairN.jpg');
+		background-size: cover;
+	}
+	.service8{
+		background: url('../../assets/gutter.jpg') 60%;
+		background-size: cover;
+	}
+	.service9{
+		background: url('../../assets/drainN.jpg');
+		background-size: cover;
+		@media (max-width: 770px){
+			margin: 5px auto;
+		}
 	}
 }
 

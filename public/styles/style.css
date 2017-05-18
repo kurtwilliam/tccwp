@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5 {
   letter-spacing: 2px; }
 
 h2 {
-  margin: 30px 0;
+  margin: 0 0 30px 0;
   font-size: 2.2rem; }
 
 h3 {
@@ -163,9 +163,15 @@ p {
   font-size: 1.2rem;
   line-height: 1.2rem; }
 
+section {
+  padding: 30px 0; }
+
 header {
   height: 100vh;
   width: 100%; }
+  @media (max-width: 500px) {
+    header {
+      height: auto; } }
 
 nav {
   padding: 20px 0;
@@ -173,19 +179,33 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  background: white; }
+  background: white;
+  z-index: 100; }
+  @media (max-width: 500px) {
+    nav {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0; } }
   nav .container {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
         justify-content: space-between;
-    -ms-flex-direction: row;
-        flex-direction: row;
     -ms-flex-align: center;
         align-items: center; }
+    @media (max-width: 500px) {
+      nav .container {
+        padding: 0 20px;
+        -ms-flex-direction: column;
+            flex-direction: column; } }
   nav img {
     width: 120px;
     height: 120px; }
+    @media (max-width: 500px) {
+      nav img {
+        width: 100%;
+        height: auto; } }
   nav a {
     text-decoration: none;
     color: black; }
@@ -200,6 +220,13 @@ nav {
   -ms-flex-direction: column;
       flex-direction: column;
   text-align: center; }
+  @media (max-width: 500px) {
+    .contact {
+      position: relative;
+      transform: translate(0, 0);
+      left: 0;
+      top: 0;
+      padding: 10px 0; } }
   .contact strong {
     font-size: 1.2rem; }
   .contact p {
@@ -221,6 +248,9 @@ nav {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   color: white; }
 
+.hamburg {
+  position: relative; }
+
 .hamburger {
   width: 30px;
   display: -ms-flexbox;
@@ -233,7 +263,8 @@ nav {
       flex-direction: column;
   padding: 0;
   border: none;
-  background: transparent; }
+  background: transparent;
+  position: relative; }
   .hamburger div {
     border: solid 1px black;
     width: 30px;
@@ -241,17 +272,17 @@ nav {
     border-radius: 50px; }
 
 #hamItems {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 100vh; }
+  height: 100vh;
+  width: 100vh; }
 
 #hamburgerItems {
   list-style: none;
   position: absolute;
-  right: 5px;
-  top: 85px; }
+  top: 21px; }
   #hamburgerItems li {
     padding: 3px;
     border: 1px solid #e6e6e6;
@@ -280,6 +311,9 @@ nav {
     font-size: 3rem;
     color: white;
     text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); }
+  @media (max-width: 500px) {
+    .hero {
+      display: none; } }
 
 .quoteO {
   position: fixed;
@@ -295,7 +329,8 @@ nav {
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+  z-index: 1000; }
 
 .quote {
   background: white;
@@ -311,7 +346,8 @@ nav {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  z-index: 1000; }
   @media (max-width: 680px) {
     .quote {
       width: 98%;
@@ -377,21 +413,70 @@ nav {
     background: none;
     height: auto; }
 
-.about ul {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 10px 0; }
-
-.about ul li {
-  padding: 5px 10px;
-  border: 1px solid #006cb7;
-  margin: 5px;
-  list-style: none;
-  margin: 5px; }
+.services {
+  background: #f0f0f0; }
+  .services .servicesGrid {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+  .services .service {
+    position: relative;
+    width: calc(33.33% - 10px);
+    margin: 5px;
+    min-height: 250px;
+    height: auto;
+    text-align: center;
+    z-index: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); }
+    @media (max-width: 770px) {
+      .services .service {
+        width: calc(50% - 10px); } }
+    @media (max-width: 570px) {
+      .services .service {
+        width: calc(100% - 10px); } }
+    .services .service h3 {
+      position: absolute;
+      bottom: 20px;
+      text-align: center;
+      color: white;
+      text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); }
+  .services .service1 {
+    background: url("../../assets/alumSidingN.jpg");
+    background-size: cover; }
+  .services .service2 {
+    background: url("../../assets/window.jpg");
+    background-size: cover; }
+  .services .service3 {
+    background: url("../../assets/eavesN.jpg") 80%;
+    background-size: cover; }
+  .services .service4 {
+    background: url("../../assets/fasciaN.jpg");
+    background-size: cover; }
+  .services .service5 {
+    background: url("../../assets/soffitN.jpg") 80%;
+    background-size: cover; }
+  .services .service6 {
+    background: url("../../assets/vinylN.jpg") 60%;
+    background-size: cover; }
+  .services .service7 {
+    background: url("../../assets/repairN.jpg");
+    background-size: cover; }
+  .services .service8 {
+    background: url("../../assets/gutter.jpg") 60%;
+    background-size: cover; }
+  .services .service9 {
+    background: url("../../assets/drainN.jpg");
+    background-size: cover; }
+    @media (max-width: 770px) {
+      .services .service9 {
+        margin: 5px auto; } }
 
 .area ul {
   display: -ms-flexbox;
