@@ -13,10 +13,6 @@
 		<nav>
 			<div class="container">
 				<img src="assets/tccLogo.png" alt="Terra Casa Contracting Logo">
-				<div class="contact">
-					<button class="fQuote">Free Quote</button>
-					<p>(647) 717-8485 <br>or <br><a href="#contact"><strong>Email Us</strong></a></p>
-				</div>
 				<div class="hamburg">
 					<button class="hamburger">
 						<div></div>
@@ -24,13 +20,23 @@
 						<div></div>
 					</button>
 					<div id="hamItems" class="hidden"></div>
+					<!-- <ul class="hamburgerItemsR">
+						<li><a href="#about">About • </a></li>
+						<li><a href="#services">Services • </a></li>
+						<li><a href="#repairs">Repairs • </a></li>
+						<li><a href="#siding">Siding • </a></li>
+						<li><a href="#eaves">Eavestroughs • </a></li>
+						<li><a href="#fascia">Fascia &amp; Soffit • </a></li>
+						<li><a href="#area">Service Area • </a></li>
+					</ul> -->
 					<ul id="hamburgerItems" class="hidden">
-						<li><a href="#about">About</a></li>
-						<li><a href="#repairs">Repairs</a></li>
-						<li><a href="#siding">Siding</a></li>
-						<li><a href="#eaves">Eavestroughs</a></li>
-						<li><a href="#fascia">Fascia &amp; Soffit</a></li>
-						<li><a href="#area">Service Area</a></li>
+						<a href="#about"><li>About</li></a>
+						<a href="#services"><li>Services</li></a>
+						<a href="#repairs"><li>Repairs</li></a>
+						<a href="#siding"><li>Siding</li></a>
+						<a href="#eaves"><li>Eavestroughs</li></a>
+						<a href="#fascia"><li>Fascia &amp; Soffit</li></a>
+						<a href="#area"><li>Service Area</li></a>
 					</ul>
 				</div>
 			</div>
@@ -38,6 +44,11 @@
 		<div class="hero">
 			<div class="container">
 				<h1>Terra Casa Contracting</h1>
+				<h2>installing and reparing aluminum siding, eavestrough and fascia in the Greater Toronto Area</h2>
+				<!-- <div class="contact"> -->
+				<button class="fQuote fQuoteH">Free Quote</button>
+					<!-- <p><a href="#contact">Email Us</a></p> -->
+				<!-- </div> -->
 			</div>
 		</div>
 	</header>
@@ -45,7 +56,7 @@
 		<div>
 			<div class="quoteO hidden" id="quoteO"></div>
 			<div class="quote hidden">
-				<h2>Free Quote</h2>
+				<h2>Free Quote - (647) 717-8485</h2>
 				<p class="close" id="close">&Cross;</p>
 				<form action="">
 					<input class="qI" type="text" name="name" placeholder="Name" required>
@@ -55,20 +66,20 @@
 					<p><strong>What services do you need?</strong></p>
 					<div class="formServices">
 						<div class="input">
-							<input type="checkbox" id="siding" name="service">
-							<label for='siding'>Siding</label>
+							<input type="checkbox" id="sidingF" name="service">
+							<label for='sidingF'>Siding</label>
 						</div>
 						<div class="input">
 							<input type="checkbox" id="window" name="service">
 							<label for="window">Window</label>
 						</div>
 						<div class="input">
-							<input type="checkbox" name="service" id="eaves">
-							<label for="eaves">Eavestroughs</label>
+							<input type="checkbox" name="service" id="eavesF">
+							<label for="eavesF">Eavestroughs</label>
 						</div>
 						<div class="input">
-							<input type="checkbox" name="service" id="fascia">
-							<label for="fascia">Fascia</label>
+							<input type="checkbox" name="service" id="fasciaF">
+							<label for="fasciaF">Fascia</label>
 						</div>
 						<div class="input">
 							<input type="checkbox" name="service" id="soffit">
@@ -90,11 +101,11 @@
 			</div>
 		</div>
 		<section class="about" id="about">
+			<div class="aboutP"></div>
 			<div class="container">
-
 				<h2>About</h2>
 				
-				<p>We are a company with long-standing roots in the community, providing quality installations of quality products at a reasonable price. Our warranty on our labor attests to our belief in our workmanship. We have a long term relationship with our major suppliers which assures the customer of prompt attention to any issues which may arise with the products we supply. We install aluminum siding, eves, fascia and do siding repairs in the GTA area; Toronto Ontario Canada.</p>
+				<p>We are a company with long-standing roots in the community, providing quality installations of quality products at a reasonable price. Our warranty on our labor attests to our belief in our workmanship. We have a long term relationship with our major suppliers which assures the customer of prompt attention to any issues which may arise with the products we supply. We install aluminum siding, eaves, fascia and do siding repairs in the GTA area; Toronto Ontario Canada.</p>
 
 				<p>Aluminum siding not only enhances the look of your home but it also protects it against the elements, helps to insulate the interior and adds that much desired curb appeal if you should decide to sell. Your Toronto home is probably your biggest investment and adding aluminum siding is a great way to protect that investment for many years to come. You want to choose a reputable siding contractor in Toronto that will give your home the care that it deserves.</p>
 
@@ -106,44 +117,72 @@
 				</div>
 			</div>
 		</section>
-		<section class="services">
+		<section class="services gBG" id="services">
 			<div class="container">
 				<h2>Services</h2>
 				<div class="servicesGrid">
 					<div class="service service1">
 						<h3>Aluminum Siding</h3>
+						<div class="sO">
+							<p>Siding is attached to the exterior of a building in order to provide protection against the elements, shelter, and aesthetic value.</p>
+						</div>
 					</div>
 					<div class="service service2">
-						<h3>Window Work</h3>
+						<h3>Windows</h3>
+						<div class="sO">
+							<p>Siding is attached to the exterior of a building in order to provide protection against the elements, shelter, and aesthetic value.</p>
+						</div>
 					</div>
 					<div class="service service3">
 						<h3>Eaves Troughs</h3>
+						<div class="sO">
+							<p>Siding is attached to the exterior of a building in order to provide protection against the elements, shelter, and aesthetic value.</p>
+						</div>
 					</div>
 					<div class="service service4">
 						<h3>Fascia</h3>
+						<div class="sO">
+							<p>Siding is attached to the exterior of a building in order to provide protection against the elements, shelter, and aesthetic value.</p>
+						</div>
 					</div>
 					<div class="service service5">
 						<h3>Soffit</h3>
+						<div class="sO">
+							<p>Siding is attached to the exterior of a building in order to provide protection against the elements, shelter, and aesthetic value.</p>
+						</div>
 					</div>
 					<div class="service service6">
 						<h3>Vinyl Siding</h3>
+						<div class="sO">
+							<p>Siding is attached to the exterior of a building in order to provide protection against the elements, shelter, and aesthetic value.</p>
+						</div>
 					</div>
 					<div class="service service7">
 						<h3>Siding Repairs</h3>
+						<div class="sO">
+							<p>Siding is attached to the exterior of a building in order to provide protection against the elements, shelter, and aesthetic value.</p>
+						</div>
 					</div>
 					<div class="service service8">
 						<h3>Gutters</h3>
+						<div class="sO">
+							<p>Siding is attached to the exterior of a building in order to provide protection against the elements, shelter, and aesthetic value.</p>
+						</div>
 					</div>
 					<div class="service service9">
 						<h3>Drains</h3>
+						<div class="sO">
+							<p>Siding is attached to the exterior of a building in order to provide protection against the elements, shelter, and aesthetic value.</p>
+						</div>
 					</div>
 				</div>
 			<div class="container">
 		</section>
 		<section class="repairs" id="repairs">
+			<div class="repairP"></div>
 			<div class="container">
 				<h2>Repairs</h2>
-				<p>To repair vinyl siding, you will need to remove the entire length of that piece. Gently unsnap and lift up on the piece above the one you are removing and take out the nails. Bring that piece to the home improvement store to find a color match to the one you are replacing. Put it back in place on the house, and nail back in. Sounds hard, yes it is so pick up the phone and call us - WE CAN HELP!</p>
+				<p>To repair vinyl siding, you will need to remove the entire length of that piece. Gently unsnap and lift up on the piece above the one you are removing and take out the nails. Bring that piece to the home improvement store to find a color match to the one you are replacing. Put it back in place on the house, and nail back in.</p>
 				 
 				<p>We can assist you with all your siding needs and repairs, we offer quality work at fair prices and use top brand material, go ahead call us now.</p>
 
@@ -155,7 +194,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="siding" id="siding">
+		<section class="siding gBG" id="siding">
 			<div class="container">
 				<h2>Siding</h2>
 				<p> ... </p>
@@ -180,7 +219,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="fascia" id="fascia">
+		<section class="fascia gBG" id="fascia">
 			<div class="container">
 				<h2>Fascia</h2>
 				<p>...</p>
