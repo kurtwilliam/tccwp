@@ -150,7 +150,8 @@ h1, h2, h3, h4, h5 {
 
 h2 {
   margin: 0 0 30px 0;
-  font-size: 2.2rem; }
+  font-size: 2.2rem;
+  word-wrap: break-word; }
 
 h3 {
   font-size: 2rem; }
@@ -198,7 +199,9 @@ nav {
       nav .container {
         padding: 0 20px;
         -ms-flex-direction: column;
-            flex-direction: column; } }
+            flex-direction: column;
+        -ms-flex-pack: center;
+            justify-content: center; } }
   nav img {
     width: 90px;
     height: 90px; }
@@ -209,6 +212,19 @@ nav {
   nav a {
     text-decoration: none;
     color: black; }
+  nav .contactNum {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    @media (max-width: 500px) {
+      nav .contactNum {
+        margin: 20px 0;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0); } }
 
 .hamburg {
   position: relative; }
@@ -229,7 +245,6 @@ nav {
   position: relative; }
   @media (max-width: 500px) {
     .hamburger {
-      margin-top: 20px;
       display: inline-block; } }
   .hamburger div {
     border: solid 1px black;
@@ -250,13 +265,14 @@ nav {
 #hamburgerItems {
   list-style: none;
   position: absolute;
-  top: 30px;
   right: 0;
   z-index: 10001; }
   @media (max-width: 500px) {
     #hamburgerItems {
-      left: -50.5px;
-      top: 50px; } }
+      left: -160px; } }
+  @media (max-width: 360px) {
+    #hamburgerItems {
+      left: -85px; } }
   #hamburgerItems li {
     padding: 5px;
     border: 1px solid #e6e6e6;
@@ -266,6 +282,9 @@ nav {
     text-align: center;
     text-transform: uppercase;
     font-size: 1.2rem; }
+    @media (max-width: 360px) {
+      #hamburgerItems li {
+        width: 200px; } }
   #hamburgerItems li:hover {
     background: #f0f0f0; }
   #hamburgerItems li a {
@@ -431,8 +450,71 @@ nav {
     filter: grayscale(100%);
     opacity: 0.3;
     z-index: -1; }
+  @media (max-width: 500px) {
+    .about .aboutTitleN {
+      display: none; } }
+  .about .aboutTitleR {
+    display: none; }
+    @media (max-width: 500px) {
+      .about .aboutTitleR {
+        display: block; } }
+  .about .aboutRP {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    display: none; }
+    @media (max-width: 500px) {
+      .about .aboutRP {
+        display: block; } }
 
-.services .servicesGrid {
+.aboutColumns {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex; }
+  @media (max-width: 720px) {
+    .aboutColumns {
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-align: center;
+          align-items: center; } }
+  .aboutColumns .aboutC {
+    width: 33.33%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+    background: rgba(0, 108, 183, 0.8);
+    color: white;
+    border-radius: 5px; }
+    @media (max-width: 720px) {
+      .aboutColumns .aboutC {
+        width: 60%; } }
+    @media (max-width: 550px) {
+      .aboutColumns .aboutC {
+        width: 80%; } }
+    @media (max-width: 400px) {
+      .aboutColumns .aboutC {
+        width: 100%; } }
+  .aboutColumns p {
+    margin: 10px 0; }
+  .aboutColumns i {
+    font-size: 2rem; }
+  .aboutColumns div {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    width: 80%; }
+  .aboutColumns .aboutTitle {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 500; }
+
+.services .container .servicesGrid {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -440,101 +522,167 @@ nav {
   -ms-flex-pack: justify;
       justify-content: space-between; }
 
-.services .service {
+.services .container .service {
   position: relative;
   width: calc(33.33% - 10px);
   margin: 5px;
   min-height: 250px;
   height: auto;
-  text-align: center;
   z-index: 0;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  text-align: center; }
   @media (max-width: 770px) {
-    .services .service {
+    .services .container .service {
       width: calc(50% - 10px); } }
   @media (max-width: 570px) {
-    .services .service {
+    .services .container .service {
       width: calc(100% - 10px); } }
-  .services .service h3 {
-    position: absolute;
-    bottom: 20px;
-    text-align: center;
+  .services .container .service h3 {
+    position: relative;
+    bottom: -180px;
     color: white;
     text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); }
-  .services .service .sO {
+  .services .container .service .sO {
+    position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     transition: all .5s ease-in-out;
     background: transparent;
-    color: transparent; }
-    .services .service .sO p {
+    color: transparent;
+    padding: 5px;
+    text-align: center; }
+    .services .container .service .sO p {
       font-size: 1.2rem;
       line-height: 1.4rem; }
-  .services .service .sO:hover {
+  .services .container .service .sO:hover {
     background: rgba(0, 0, 0, 0.7);
     color: white; }
-  .services .service .sO:active {
+  .services .container .service .sO:active {
     background: rgba(0, 0, 0, 0.7);
     color: white; }
 
-.services .service1 {
+.services .container .service1 {
   background: url("../../assets/alumSidingN.jpg");
   background-size: cover; }
 
-.services .service2 {
+.services .container .service2 {
   background: url("../../assets/window.jpg");
   background-size: cover; }
 
-.services .service3 {
+.services .container .service3 {
   background: url("../../assets/eavesN.jpg") 80%;
   background-size: cover; }
 
-.services .service4 {
+.services .container .service4 {
   background: url("../../assets/fasciaN.jpg");
   background-size: cover; }
 
-.services .service5 {
+.services .container .service5 {
   background: url("../../assets/soffitN.jpg") 80%;
   background-size: cover; }
 
-.services .service6 {
+.services .container .service6 {
   background: url("../../assets/vinylN.jpg") 60%;
   background-size: cover; }
 
-.services .service7 {
+.services .container .service7 {
   background: url("../../assets/repairN.jpg");
   background-size: cover; }
 
-.services .service8 {
+.services .container .service8 {
   background: url("../../assets/gutter.jpg") 60%;
   background-size: cover; }
 
-.services .service9 {
+.services .container .service9 {
   background: url("../../assets/drainN.jpg");
   background-size: cover; }
   @media (max-width: 770px) {
-    .services .service9 {
+    .services .container .service9 {
       margin: 5px auto; } }
 
-.area ul {
+.repairs {
+  position: relative; }
+  .repairs .repairP {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url("../../assets/workers.jpg") 35%;
+    background-size: cover;
+    filter: grayscale(100%);
+    opacity: 0.3;
+    z-index: -1; }
+
+.eaves {
+  position: relative; }
+  .eaves .eavesP {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url("../../assets/worker.jpg") 10%;
+    background-size: cover;
+    filter: grayscale(100%);
+    opacity: 0.3;
+    z-index: -1; }
+
+.area .container .areas {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 10px 0; }
-
-.area ul li {
-  padding: 5px 10px;
-  border: 1px solid #006cb7;
-  margin: 5px;
-  list-style: none;
-  margin: 5px; }
+  -ms-flex-align: center;
+      align-items: center;
+  height: 300px; }
+  @media (max-width: 730px) {
+    .area .container .areas {
+      height: auto;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; } }
+  .area .container .areas .areaL {
+    height: 100%;
+    width: 50%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+    @media (max-width: 730px) {
+      .area .container .areas .areaL {
+        width: 100%;
+        height: 50%; } }
+    .area .container .areas .areaL ul li {
+      padding: 5px 10px;
+      border: 1px solid #006cb7;
+      margin: 5px;
+      list-style: none; }
+    .area .container .areas .areaL ul {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .area .container .areas .areaR {
+    height: auto;
+    width: 50%; }
+    @media (max-width: 730px) {
+      .area .container .areas .areaR {
+        width: 100%;
+        height: 50%;
+        min-height: 200px; } }
+    .area .container .areas .areaR iframe {
+      width: 100%;
+      display: block;
+      pointer-events: none;
+      position: relative; }
+    .area .container .areas .areaR iframe.clicked {
+      pointer-events: auto; }
 
 .hidden {
   display: none; }
@@ -564,6 +712,10 @@ footer {
       font-size: 2rem; }
     footer .fL p {
       font-size: 1.2rem; }
+    @media (max-width: 320px) {
+      footer .fL #emailF {
+        overflow-wrap: break-word;
+        word-wrap: break-word; } }
   footer .fR {
     width: 50%; }
     @media (max-width: 700px) {

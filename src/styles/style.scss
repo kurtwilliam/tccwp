@@ -16,18 +16,6 @@ html{ margin:0; padding:0; font-family: 'Roboto', sans-serif; }
 	}
 }
 
-// section .containerC {
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	.cLeft{
-// 		width:25%;
-// 	}
-// 	.cRight{
-// 		width:75%;
-// 	}
-// }
-
 $aBlue: rgb(0,108,183);
 $aRed: rgb(238,54,62);
 
@@ -40,6 +28,7 @@ h1,h2,h3,h4,h5 {
 h2{
 	margin: 0 0 30px 0;
 	font-size: 2.2rem;
+	word-wrap: break-word;
 }
 
 h3{
@@ -86,9 +75,11 @@ nav{
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		// position: relative;
 		@media (max-width: 500px){
 			padding: 0 20px;
 			flex-direction: column;
+			justify-content: center;
 		}
 	}
 	img{
@@ -102,6 +93,20 @@ nav{
 	a{
 		text-decoration: none;
 		color:black;
+	}
+	.contactNum {
+		margin:0;
+		position: absolute;
+		left:50%;
+		top:50%;
+		transform: translate(-50%,-50%);
+		@media (max-width:500px){
+			margin:20px 0;
+			position: relative;
+			top:0;
+			left:0;
+			transform: translate(0,0);
+		}
 	}
 }
 
@@ -119,9 +124,8 @@ nav{
 	border:none;
 	background: transparent;
 	position:relative;
-	// display:none;
 	@media (max-width: 500px){
-		margin-top: 20px;
+		// margin-top: 20px;
 		display: inline-block;
 	}
 	div {
@@ -146,12 +150,15 @@ nav{
 #hamburgerItems {
 	list-style: none;
 	position: absolute;
-	top:30px;
+	// top:30px;
 	right:0;
 	z-index:10001;
 	@media (max-width: 500px){
-		left:-50.5px;
-		top:50px;
+		left:-160px;
+		// top:50px;
+	}
+	@media (max-width: 360px){
+		left:-85px;
 	}
 	li {
 		padding:5px;
@@ -162,6 +169,9 @@ nav{
 		text-align: center;
 		text-transform: uppercase;
 		font-size: 1.2rem;
+		@media (max-width: 360px){
+			width:200px;
+		}
 	}
 	li:hover {
 		background:rgb(240,240,240);
@@ -172,32 +182,6 @@ nav{
 		width:116.16px;
 	}
 }
-
-// .hamburgerItemsR{
-// 	list-style: none;
-// 	display: flex;
-// 	flex-wrap:wrap;
-// 	justify-content: flex-end;
-// 	text-transform: uppercase;
-// 	font-size: 1rem;
-// 	max-width: 300px;
-// 	li {
-// 		padding:3px;
-// 		// border:1px solid rgb(230,230,230);
-// 		// background:white;
-// 		cursor: pointer;
-// 		// width:125px;
-// 		font-size: 1rem;
-// 	}
-// 	li a{
-// 		text-decoration: none;
-// 		color:black;
-// 		// width:116.16px;
-// 	}
-// 	@media(max-width:500px){
-// 		display: none;
-// 	}
-// }
 
 .hero {
 	height:100vh;
@@ -369,9 +353,76 @@ nav{
 		opacity: 0.3;
 		z-index: -1;
 	}
+	.aboutTitleN{
+		@media (max-width: 500px){
+			display: none;
+		}
+	}
+	.aboutTitleR {
+		display:none;
+		@media (max-width: 500px){
+			display: block;
+		}
+	}
+	.aboutRP {
+		font-size: 1.8rem;
+		line-height: 1.8rem;
+		// text-transform: uppercase;
+		display:none;
+		@media (max-width: 500px){
+			display: block;
+		}
+	}
 }
 
-.services {
+.aboutColumns{
+	width:100%;
+	display: flex;
+	@media (max-width:720px){
+		flex-direction: column;
+		align-items: center;
+	}
+	.aboutC{
+		width:33.33%;
+		display: flex;
+		flex-direction: column;
+		padding:10px;
+		margin:5px;
+		text-align: center;
+		align-items: center;
+		background: rgba(0,108,183,0.8);
+		color:white;
+		border-radius: 5px;
+		@media (max-width:720px){
+			width:60%;
+		}
+		@media (max-width:550px){
+			width:80%;
+		}
+		@media (max-width:400px){
+			width:100%;
+		}
+	}
+	p {
+		margin:10px 0;
+	}
+	i {
+		// width:20%;
+		font-size: 2rem;
+	}
+	div{
+		display: flex;
+		flex-direction: column;
+		width:80%;
+	}
+	.aboutTitle{
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+}
+
+.services .container {
 	.servicesGrid{
 		display:flex;
 		flex-wrap: wrap;
@@ -383,11 +434,11 @@ nav{
 		margin:5px;
 		min-height: 250px;
 		height:auto;
-		text-align: center;
 		z-index: 0;
-		display:flex;
-		justify-content: center;
+		// display:flex;
+		// justify-content: center;
 		box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+		text-align: center;
 		@media (max-width: 770px){
 			width:calc(50% - 10px);
 		}
@@ -395,18 +446,24 @@ nav{
 			width:calc(100% - 10px);
 		}
 		h3{
-			position: absolute;
-			bottom:20px;
-			text-align: center;
+			position: relative;
+			bottom:-180px;
 			color:white;
 			text-shadow: 0 5px 10px rgba(0,0,0,0.3);
 		}
 		.sO {
+			position: absolute;
 			width:100%;
 			height: 100%;
+			top:0;
+			bottom:0;
+			left:0;
+			right:0;
 			transition: all .5s ease-in-out;
 			background: rgba(0,0,0,0.0);
 			color:rgba(0,0,0,0);
+			padding:5px;
+			text-align: center;
 			p{
 				font-size: 1.2rem;
 				line-height: 1.4rem;
@@ -462,19 +519,89 @@ nav{
 	}
 }
 
-.area {
-	ul {
-		display: flex;
-		justify-content: center;
-		flex-wrap:wrap;
-		margin: 10px 0;
+
+.repairs{
+	position: relative;
+	.repairP{
+		position: absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		background: url('../../assets/workers.jpg') 35%;
+		background-size: cover;
+		filter:grayscale(100%);
+		opacity: 0.3;
+		z-index: -1;
 	}
-	ul li {
-		padding: 5px 10px;
-		border:1px solid $aBlue;
-		margin: 5px;
-		list-style: none;
-		margin: 5px;
+}
+
+.eaves{
+	position: relative;
+	.eavesP{
+		position: absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		background: url('../../assets/worker.jpg') 10%;
+		background-size: cover;
+		filter:grayscale(100%);
+		opacity: 0.3;
+		z-index: -1;
+	}
+}
+
+.area .container .areas {
+	display:flex;
+	align-items: center;
+	height:300px;
+	@media (max-width:730px){
+		height:auto;
+		flex-wrap: wrap;
+	}
+	.areaL {
+		height:100%;
+		width:50%;
+		display: flex;
+		align-items: center;
+		@media (max-width:730px){
+			width:100%;
+			height:50%;
+		}
+		ul li {
+			padding: 5px 10px;
+			border:1px solid $aBlue;
+			margin: 5px;
+			list-style: none;
+		}
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	.areaR{
+		height:auto;
+		width:50%;
+		@media (max-width:730px){
+			width:100%;
+			height:50%;
+			min-height: 200px;
+		}
+		iframe {
+			width:100%;
+			// height:100%;
+			display: block;
+			pointer-events: none;
+			position: relative;
+			// top:-30px; 
+			// border:none;
+		}
+		iframe.clicked{
+			pointer-events: auto;
+		}
 	}
 }
 
@@ -505,6 +632,12 @@ footer {
 		}
 		p{
 			font-size: 1.2rem;
+		}
+		#emailF{
+			@media (max-width: 320px){
+				overflow-wrap: break-word;
+				word-wrap: break-word;
+			}
 		}
 	}
 	.fR {
