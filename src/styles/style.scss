@@ -94,11 +94,12 @@ nav{
 		text-decoration: none;
 		color:black;
 	}
-	.contactNum {
+	.contactNumCont {
 		margin:0;
 		position: absolute;
 		left:50%;
 		top:50%;
+		text-align: center;
 		transform: translate(-50%,-50%);
 		@media (max-width:500px){
 			margin:20px 0;
@@ -467,14 +468,14 @@ nav{
 				line-height: 1.4rem;
 			}
 		}
-		.sO:hover {
-			background:rgba(0,0,0,0.7);
-			color:white;
-		}
-		.sO:active {
-			background:rgba(0,0,0,0.7);
-			color:white;
-		}
+		// .sO:hover {
+		// 	background:rgba(0,0,0,0.7);
+		// 	color:white;
+		// }
+		// .sO:active {
+		// 	background:rgba(0,0,0,0.7);
+		// 	color:white;
+		// }
 	}
 	.service1{
 		background: url('../../assets/alumSidingN.jpg');

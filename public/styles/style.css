@@ -212,14 +212,15 @@ nav {
   nav a {
     text-decoration: none;
     color: black; }
-  nav .contactNum {
+  nav .contactNumCont {
     margin: 0;
     position: absolute;
     left: 50%;
     top: 50%;
+    text-align: center;
     transform: translate(-50%, -50%); }
     @media (max-width: 500px) {
-      nav .contactNum {
+      nav .contactNumCont {
         margin: 20px 0;
         position: relative;
         top: 0;
@@ -558,12 +559,6 @@ nav {
     .services .container .service .sO p {
       font-size: 1.2rem;
       line-height: 1.4rem; }
-  .services .container .service .sO:hover {
-    background: rgba(0, 0, 0, 0.7);
-    color: white; }
-  .services .container .service .sO:active {
-    background: rgba(0, 0, 0, 0.7);
-    color: white; }
 
 .services .container .service1 {
   background: url("../../assets/alumSidingN.jpg");
