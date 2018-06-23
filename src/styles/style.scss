@@ -85,6 +85,7 @@ nav{
 	img{
 		width:90px;
 		height:90px;
+		max-width:250px;
 		@media (max-width: 500px){
 			width: 100%;
 			height:auto;
@@ -490,7 +491,7 @@ nav{
 		background-size: cover;
 	}
 	.service4{
-		background: url('../../assets/fasciaN.jpg');
+		background: url('../../assets/roofingN.jpg');
 		background-size: cover;
 	}
 	.service5{
